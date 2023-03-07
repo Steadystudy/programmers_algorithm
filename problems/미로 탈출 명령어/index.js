@@ -21,16 +21,16 @@ function solution(n, m, x, y, r, c, k) {
     direction['r'] += c - y;
   }
   answer += 'd'.repeat(direction['d']);
-  let d = Math.min(k / 2, n - (x + direction['d']));
-  answer += 'd'.repeat(d);
-  direction['u'] += d;
-  remain -= 2 * d;
+  const dCount = Math.min(remain / 2, n - (x + direction['d']));
+  answer += 'd'.repeat(dCount);
+  direction['u'] += dCount;
+  remain -= 2 * dCount;
 
   answer += 'l'.repeat(direction['l']);
-  let l = Math.min(k / 2, y - direction['l'] - 1);
-  answer += 'l'.repeat(l);
-  direction['r'] += l;
-  remain -= 2 * l;
+  const lCount = Math.min(remain / 2, y - direction['l'] - 1);
+  answer += 'l'.repeat(lCount);
+  direction['r'] += lCount;
+  remain -= 2 * lCount;
 
   answer += 'rl'.repeat(remain / 2);
   answer += 'r'.repeat(direction['r']);
