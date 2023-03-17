@@ -1,3 +1,4 @@
+// 11번 케이스만 실패함 추후 수정
 function solution(board) {
   const dp = {};
   const colLen = board.length;
